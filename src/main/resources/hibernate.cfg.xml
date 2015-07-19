@@ -7,7 +7,6 @@
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/JSFeCDI</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">123456</property>
-        <property name="hibernate.current_session_context_class">thread</property>
     
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>

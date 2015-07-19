@@ -15,6 +15,7 @@ public class Usuario implements Serializable {
 
     @Id
     private Integer id;
+    
     private String name;
     private String password;
 

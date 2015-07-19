@@ -1,7 +1,9 @@
 package br.com.casa.ferias.main;
 
 import br.com.casa.ferias.conf.HibernateUtil;
+import br.com.casa.ferias.dao.UsuarioDao;
 import br.com.casa.ferias.model.Usuario;
+import br.com.casa.ferias.repository.UsuarioRepository;
 import java.util.List;
 import org.hibernate.Query;
 
@@ -17,16 +19,22 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
+//        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//        session.beginTransaction();
+//
+//        Query hql = session.createQuery("FROM Usuario");
+//
+//        List<Usuario> usuarios = hql.list();
+//
+//        session.getTransaction().commit();
+//
+//        System.out.println(usuarios);
 
-        Query hql = session.createQuery("FROM Usuario");
+        UsuarioRepository usersRepository = new UsuarioDao(HibernateUtil.getSessionFactory().getCurrentSession());
+        
 
-        List<Usuario> usuarios = hql.list();
+        System.out.println(usersRepository.findAll());
 
-        session.getTransaction().commit();
-
-        System.out.println(usuarios);
+        System.out.println("TERMINOU");
     }
-
 }

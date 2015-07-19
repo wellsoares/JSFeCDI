@@ -9,10 +9,14 @@ import java.util.List;
  */
 public interface UsuarioRepository {
 
-    void salva(Usuario usuario);
+    /**
+     *
+     * @param usuario
+     */
+    public void save(Usuario usuario);
 
-    Usuario buscar(Long id);
+    public Usuario getById(Long id);
 
-    List<Usuario> buscarTodos();
+    public List<Usuario> findAll();
 
 }
